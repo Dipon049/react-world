@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './Country.css' ;
 
-const country = ({country}) => {
+const country = ({country,handleVisitedCountries }) => {
+
     const [visited, setVisited] = useState (false);
    // console.log(country.flags.flags.png)
 
     const handleVisited = () => {
         //setVisited (true);
         setVisited(visited ? false: true);
+        handleVisitedCountries (country);
     }
     return (
         <div className={`country ${visited && 'country-visited'}`}>
